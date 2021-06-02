@@ -1,0 +1,66 @@
+
+#!/usr/bin/env bash
+
+# load other .bashrcs
+if [ -f ~/.bashrc_wsl ]; then
+   . ~/.bashrc_wsl
+fi
+if [ -f ~/.bashrc_mac ]; then
+   . ~/.bashrc_mac
+fi
+if [ -f ~/.bashcv ]; then
+   . ~/.bashcv
+fi
+
+
+# bash history increased limit
+HISTSIZE=20000
+HISTFILESIZE=20000
+
+alias sbp="source ~/.bashrc"
+alias vbp="vim ~/.bash_profile"
+alias vbrc="vim ~/.bashrc"
+
+# use all .env variables from local file, only if exists
+alias .env="env $(cat .env | xargs)"
+
+# git aliases
+alias gl='git log'
+alias gd='git diff'
+alias gs='git status'
+alias gp='git push'
+alias gpl='git pull'
+alias gau='git add -u'
+alias ga.='git add .'
+alias ga='git add'
+alias gco='git checkout'
+alias gb='git checkout -b'
+alias gm='git merge'
+gc() { git commit -sm \'"$@"\'; }
+alias v='vim'
+alias gpn="git push --set-upstream origin $(git branch | awk '/^\* / { print $2 }')"
+
+# docker aliases
+alias d='docker'
+alias dc='docker-compose'
+alias ddestroy='docker stop $(docker ps -aq) && docker rm $(docker ps -a -q) && docker system prune && docker image prune && docker container prune'
+
+
+# kill port
+kp() { lsof -ti:"$@" | xargs kill -9; }
+
+# cd up directory alias-function
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias .......="cd ../../../../../.."
+
+
+# use vi mode in bash
+set -o vi
+
+
+# set bash to v5 for scripts
+export PATH="/usr/local/bin:$PATH"

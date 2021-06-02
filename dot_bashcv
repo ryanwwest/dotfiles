@@ -1,0 +1,13 @@
+
+
+alias cv="cd ~/cv"
+alias vbc="vim ~/.bashvc"
+
+
+# samsung
+
+# (android studio)
+export ANDROID_SDK=/Users/ryanwest/Library/Android/sdk
+export ANDROID_NDK=/Users/ryanwest/Library/Android/sdk/ndk/21.4.7075529
+export PATH=$PATH:$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools
+
