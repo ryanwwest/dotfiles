@@ -1,5 +1,5 @@
 [user]
-	name = ryanwest6
+	name = ryanwwest
 	email = ryan@ryanwwest.com
 	signingkey = E06C1FACF070E2ECF24872B9A61A8237A9B022CE
 
@@ -15,12 +15,6 @@
 	gpgsign = true
 [core]
 	excludesfile = /Users/ryanwest/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [credential]
 	helper = osxkeychain
 
