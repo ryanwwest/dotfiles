@@ -1,0 +1,26 @@
+[user]
+	name = ryanwest6
+	email = ryan@ryanwwest.com
+	signingkey = E06C1FACF070E2ECF24872B9A61A8237A9B022CE
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[gpg]
+	program = /usr/local/bin/gpg
+[commit]
+	gpsign = true
+	gpgsign = true
+[core]
+	excludesfile = /Users/ryanwest/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[credential]
+	helper = osxkeychain
+
